@@ -32,7 +32,7 @@ int calculateDealersHandValue(const std::vector<Card>& hand)
     return total;
 }
 
-// Function to calculate the total value of a player's hand remove with Fabians code
+// Function to calculate the total value of a player's hand, change with Fabians code
 int calculatePlayersHandValue(const std::vector<Card>& hand)
 {
     int total = 0;
