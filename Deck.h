@@ -18,6 +18,7 @@ public:
 };
 cardInfo DrawCard()
 {
+    // Draw new card to CardInfo
     Deck deck;
     srand(time(0));
     int cardDrawnValue = deck.value.at(0 + rand() % 12); // Drawn
