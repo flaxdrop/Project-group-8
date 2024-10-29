@@ -44,9 +44,3 @@ cardInfo DrawCard()
     }
     return {cardDrawnValue, cardInfo};
 }
-int main()
-{
-    Deck card;
-    cardInfo drawnCard = DrawCard();
-    std::cout << drawnCard.cardValue << " " << drawnCard.cardInfomation;
-}
