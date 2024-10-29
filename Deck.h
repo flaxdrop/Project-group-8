@@ -21,9 +21,9 @@ cardInfo DrawCard()
     // Draw new card to CardInfo
     Deck deck;
     srand(time(0));
-    int cardDrawnValue = deck.value.at(0 + rand() % 12); // Drawn
+    int cardDrawnValue = deck.value.at(0 + rand() % 12); // Draw a random card
     std::string cardInfo = deck.color.at(0 + rand() % 3) + " ";
-    switch (cardDrawnValue)
+    switch (cardDrawnValue) // Sets name for all clothing cards
     {
     case 1:
         cardInfo += "Ace";
