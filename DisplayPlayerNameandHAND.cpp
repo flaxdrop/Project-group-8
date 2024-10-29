@@ -1,49 +1,45 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
 
 #define MAX_CARDS 10
 
+struct Card {
+    std::string rank;
+    std::string suit;
+};
 
-typedef struct {
-    char rank[10];
-    char suit[10];
-} Card;
-
-
-typedef struct {
-    char name[20];
+struct Player {
+    std::string name;
     Card hand[MAX_CARDS];
-    int card_count;
-} Player;
+    int card_count = 0;
+};
 
-
-void add_card(Player *player, char *rank, char *suit) {
-    if (player->card_count < MAX_CARDS) {
-        strcpy(player->hand[player->card_count].rank, rank);
-        strcpy(player->hand[player->card_count].suit, suit);
-        player->card_count++;
+void add_card(Player &player, const std::string &rank, const std::string &suit) {
+    if (player.card_count < MAX_CARDS) {
+        player.hand[player.card_count].rank = rank;
+        player.hand[player.card_count].suit = suit;
+        player.card_count++;
     } else {
-        printf("Handen är full!\n");
+        std::cout << "Handen är full!" << std::endl;
     }
 }
 
-void show_hand(Player *player) {
-    printf("%s's aktuella hand:\n", player->name);
-    for (int i = 0; i < player->card_count; i++) {
-        printf("%s of %s\n", player->hand[i].rank, player->hand[i].suit);
+void show_hand(const Player &player) {
+    std::cout << player.name << "'s aktuella hand:" << std::endl;
+    for (int i = 0; i < player.card_count; i++) {
+        std::cout << player.hand[i].rank << " of " << player.hand[i].suit << std::endl;
     }
-    printf("\n");
+    std::cout << std::endl;
 }
 
 int main() {
     Player player;
-    strcpy(player.name, "Spelare 1");
-    player.card_count = 0;
-    add_card(&player, "Ess", "Hjärter");
-    show_hand(&player);
+    player.name = "Spelare 1";
+    add_card(player, "Ess", "Hjärter");
+    show_hand(player);
 
-    add_card(&player, "10", "Klöver");
-    show_hand(&player);
+    add_card(player, "10", "Klöver");
+    show_hand(player);
 
     return 0;
 }
