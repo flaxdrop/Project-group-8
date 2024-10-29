@@ -1,9 +1,9 @@
 #include <iostream>
+#include "Deck.h"
 
-int main(){
-
-
-std::cout << "test";
-
-    return 0;
+int main()
+{
+    Deck card;
+    cardInfo drawnCard = DrawCard();
+    std::cout << drawnCard.cardValue << " " << drawnCard.cardInfomation;
 }
