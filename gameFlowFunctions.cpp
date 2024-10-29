@@ -16,7 +16,8 @@ void startNewRound(Deck& deck, std::vector<Card>& playerHand, std::vector<Card>&
 bool promptNewRoundOrQuit();
 
 // Main function with example deck/functions to test the code
-int main() {
+int main() 
+{
     Deck deck = { {10}, {2}, {1}, {5}, {7}, {8}, {6}, {10} }; 
     std::vector<Card> playerHand;
     std::vector<Card> dealerHand;
@@ -38,12 +39,14 @@ int main() {
 }
 
 // Function to shuffle the deck
-void shuffleDeck(Deck& deck) {
+void shuffleDeck(Deck& deck) 
+{
     std::random_device rd; // Seed for random number generator
     std::mt19937 g(rd());  // engine for shuffling
     std::shuffle(deck.begin(), deck.end(), g);
 }
 
+//Function to start new round
 void startNewRound(Deck& deck, std::vector<Card>& playerHand, std::vector<Card>& dealerHand) 
 {
     playerHand.clear();
