@@ -2,8 +2,6 @@
 #include <vector>
 #include <string>
 
-int randomCard();
-
 struct cardInfo // Storing card Value
 {
     int cardValue;              // The value to use when calc
