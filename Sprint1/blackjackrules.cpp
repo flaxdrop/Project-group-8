@@ -1,7 +1,7 @@
 #include <iostream>
 
-void displayBlackjackRules(){
-
+void displayBlackjackRules()
+{
 
     std::cout << "Welcome to Blackjack!\n";
     std::cout << "Rules!\n";
