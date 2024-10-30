@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-void dealerTurn(std::vector<cardInfo> &dealerHand)
+cardInfo dealerTurn(std::vector<cardInfo> &dealerHand)
 {
     cardInfo card;
     std::cout << "Dealer's turn:\n";

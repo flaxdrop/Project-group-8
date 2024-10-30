@@ -25,7 +25,7 @@ int main()
     playerHand.push_back(card = DrawCard()); // Draw second card for player
 
     // Simulating the dealer's turn
-    dealerTurn(dealerHand);
+    dealerHand.push_back(dealerTurn(dealerHand));
 
     // Calculate hand values
     int playerHandValue = calculateHandValue(playerHand); // Calculate player's hand value
