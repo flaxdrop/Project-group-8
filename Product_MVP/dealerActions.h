@@ -1,12 +1,12 @@
 //For handling dealer's actions and automated decision-making.
 
-#ifndef GAMESETUP_H
-#define GAMESETUP_H
 
+#include <windows.h>
+#include <iostream>
 #include <string>
 #include <vector>
 
-void dealerTurn(std::vector<Card> &dealerHand, std::vector<Card> &deck, int &deckIndex)
+void dealerTurn(std::vector<cardInfo> &dealerHand)
 {
     std::cout << "Dealer's turn:\n";
 
@@ -19,10 +19,9 @@ void dealerTurn(std::vector<Card> &dealerHand, std::vector<Card> &deck, int &dec
             break;
         }
 
-        dealerHand.push_back(deck[deckIndex]);
-        deckIndex++;
-
-        std::cout << "Dealer draws a card: " << dealerHand.back().value << " (Total: " << handValue << ")\n";
+        dealerHand.push_back(DrawCard());
+    
+        std::cout << "Dealer draws a card: " << dealerHand << " (Total: " << handValue << ")\n";
         Sleep(2000);
     }
 
@@ -33,4 +32,4 @@ void dealerTurn(std::vector<Card> &dealerHand, std::vector<Card> &deck, int &dec
 
 
 
-#endif
+
