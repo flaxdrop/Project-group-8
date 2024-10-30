@@ -7,33 +7,8 @@ struct Card
     int value;
 };
 
-// Function to calculate the total value of a dealer's hand
-int calculateDealersHandValue(const std::vector<Card> &hand)
-{
-    int total = 0;
-    int acesCount = 0;
-
-    for (const Card &card : hand)
-    {
-        total += card.value;
-        if (card.value == 1)
-        {
-            acesCount++;
-        }
-    }
-
-    // Adjust for Aces: if total is 11 or less, count Ace as 11
-    while (total <= 11 && acesCount > 0)
-    {
-        total += 10;
-        acesCount--;
-    }
-
-    return total;
-}
-
 // Function to calculate the total value of a player's hand, change with Fabians code
-int calculatePlayersHandValue(const std::vector<Card> &hand)
+int calculateHandValue(const std::vector<Card> &hand)
 {
     int total = 0;
     int acesCount = 0;
@@ -62,7 +37,7 @@ void dealerTurn(std::vector<Card> &dealerHand, std::vector<Card> &deck, int &dec
 
     while (true)
     {
-        int handValue = calculateDealersHandValue(dealerHand);
+        int handValue = calculateHandValue(dealerHand);
 
         if (handValue >= 17)
         {
@@ -76,7 +51,7 @@ void dealerTurn(std::vector<Card> &dealerHand, std::vector<Card> &deck, int &dec
         Sleep(2000);
     }
 
-    std::cout << "Dealer has a total of " << calculateDealersHandValue(dealerHand) << ".\n";
+    std::cout << "Dealer has a total of " << calculateHandValue(dealerHand) << ".\n";
 }
 
 void determineWinner(int playerHandValue, int dealerHandValue)
@@ -122,8 +97,8 @@ int main()
     dealerTurn(dealerHand, deck, deckIndex);
 
     // Calculate hand values
-    int playerHandValue = calculatePlayersHandValue(playerHand); // Calculate player's hand value
-    int dealerHandValue = calculateDealersHandValue(dealerHand); // Calculate dealer's hand value
+    int playerHandValue = calculateHandValue(playerHand); // Calculate player's hand value
+    int dealerHandValue = calculateHandValue(dealerHand); // Calculate dealer's hand value
 
     // Determine the winner
     determineWinner(playerHandValue, dealerHandValue);
