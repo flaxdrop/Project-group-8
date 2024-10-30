@@ -20,6 +20,12 @@ struct Player
     int card_count = 0;
 };
 
+// Function to initialize the random seed for card drawing
+void initialize_game()
+{
+    srand(static_cast<unsigned>(time(0)));
+}
+
 // Function to draw a card (simulates card drawing)
 Card draw_card()
 {
@@ -136,47 +142,4 @@ int calculate_score(const Player &player)
         }
     }
     return score;
-}
-
-// Main game program
-int main()
-{
-    srand(static_cast<unsigned>(time(0))); // Random seed for card drawing
-
-    Player player, split_player;
-    player.name = "Player 1";
-
-    int bet = 100;
-    std::cout << "Starting bet: " << bet << "\n";
-
-    // Draw initial cards and display the player's hand
-    add_card(player, draw_card());
-    add_card(player, draw_card());
-    show_hand(player);
-
-    // Example usage of twist features
-    double_or_nothing(player, bet);
-    show_hand(player);
-
-    // Add a card to test split
-    add_card(player, draw_card());
-    split_hand(player, split_player);
-
-    // Simulate insurance (dealer does not have blackjack)
-    bool dealer_has_blackjack = false;
-    insurance(player, bet, dealer_has_blackjack);
-
-    // Surrender example
-    surrender(player, bet);
-
-    // Calculate final score and check for push
-    int player_score = calculate_score(player);
-    int dealer_score = 20; // Example dealer score
-    check_push(player_score, dealer_score);
-
-    // Display final bet and score
-    std::cout << "Final bet: " << bet << "\n";
-    std::cout << "Player's final score: " << player_score << "\n";
-
-    return 0;
 }
