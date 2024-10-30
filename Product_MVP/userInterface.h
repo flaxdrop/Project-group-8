@@ -15,26 +15,26 @@ void displayHandValue(const std::vector<Card> &hand, const std::string &playerNa
     }
 }
 
-int calculateHandValue(const std::vector<Card> &hand)
+int calculateHandValue(const std::vector<cardInfo> &hand)
 {
 
     int totalValue = 0;
     int acesCount = 0;
 
-    for (const Card &card : hand)
+    for (const cardInfo &card : hand)
     {
-        if (card.value == 1) // ace
+        if (card.cardValue == 1) // ace
         {
             acesCount++;
             totalValue += 11; // räknar först ace som 11
         }
-        else if (card.value > 10) // ansikts kort
+        else if (card.cardValue > 10) // ansikts kort
         {
             totalValue += 10;
         }
         else
         {
-            totalValue += card.value; // vanliga kort
+            totalValue += card.cardValue; // vanliga kort
         }
     }
     while (totalValue > 21 && acesCount > 0) // denna kollar ifall det blir över 21 med ace

@@ -12,15 +12,34 @@
 
 int main()
 {
+std::vector<cardInfo> dealerHand;
+std::vector<cardInfo> playerHand;
 
     displayBlackjackRules();
     displayTwistRules();
     cardInfo card;
     std::string playerName = getPlayerName();
     std::vector<cardInfo> playerCards = {};
-    playerCards.push_back(card = DrawCard());
-    for (cardInfo card : playerCards)
-    {
-        std::cout << card.cardValue << " " << card.cardInfomation;
-    }
+    
+    
+
+
+    
+
+    playerHand.push_back(card = DrawCard()); // Draw first card for player
+    playerHand.push_back(card = DrawCard()); // Draw second card for player
+
+    // Simulating the dealer's turn
+    dealerTurn(dealerHand);
+
+    // Calculate hand values
+    int playerHandValue = calculateHandValue(playerHand); // Calculate player's hand value
+    int dealerHandValue = calculateHandValue(dealerHand); // Calculate dealer's hand value
+
+    // Determine the winner
+    determineWinner(playerHandValue, dealerHandValue);
+
+    return 0;
+
+    
 }
