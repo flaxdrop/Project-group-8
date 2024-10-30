@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "deck.h"
 #include "dealerActions.h"
 #include "gameSetup.h"
@@ -11,8 +12,13 @@
 
 int main()
 {
+
+    displayBlackjackRules();
+    displayTwistRules();
     cardInfo card;
-    card = DrawCard();
     std::string playerName = getPlayerName();
-    std::cout << playerName;
+    std::vector<cardInfo>playerCards = {};
+    playerCards.push_back(card = DrawCard());
+    for 
+    
 }

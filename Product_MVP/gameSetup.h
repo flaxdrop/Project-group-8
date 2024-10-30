@@ -28,12 +28,11 @@ void displayBlackjackRules()
     std::cout << "6. If your hand exceeds 21, you bust and lose the round.\n";
     std::cout << "7. The dealer must hit until their total is atleast 17.\n";
     std::cout << "8. Whoever is closest to 21 without busting wins the round!\n";
-    std::cout << "This is not your usual blackjack game, there will be some twists when you least expect it Such as : LOREM IPSUM DOLER";
-    std::cout << "Good luck!\n";
+    std::cout << "-----------------------------------------------------------------------------------------------\n\n\n"; 
 }
 
 void displayTwistRules()
-{
+{   std::cout << "This is not your usual blackjack game, there will be some twists when you least expect it Such as: \n";
     std::cout << "1. Free Hit Twist:\n";
     std::cout << "   - Drawn cards that trigger this twist allow you to take a 'free hit' without the risk of busting.\n";
     std::cout << "   - You can only use this twist once per turn when it's triggered.\n\n";
@@ -55,4 +54,5 @@ void displayTwistRules()
     std::cout << "   - When a twist card is drawn by either the player or dealer, it triggers one of the twists above.\n\n";
 
     std::cout << "Good luck! Keep an eye out for twist cards and use them strategically to gain an advantage.\n";
+    std::cout << "-----------------------------------------------------------------------------------------------\n\n\n"; 
 }
