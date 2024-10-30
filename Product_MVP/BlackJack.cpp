@@ -11,4 +11,8 @@
 
 int main()
 {
+    cardInfo card;
+    card = DrawCard();
+    std::string playerName = getPlayerName();
+    std::cout << playerName;
 }

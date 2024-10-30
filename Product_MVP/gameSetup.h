@@ -1,31 +1,22 @@
 // For initial setup, player details, and displaying rules.
-
-#ifndef GAMESETUP_H
-#define GAMESETUP_H
-
 #include <string>
 #include <vector>
 #include <iostream>
 
-std::string getPlayerName(){
-std::string name;
-std::cout << "Please enter your name: ";
-std::getline(std::cin, name);
+std::string getPlayerName()
+{
+    std::string name;
+    std::cout << "Please enter your name: ";
+    std::getline(std::cin, name);
 
     return name;
 }
 
 // Denna funktion gör bara så att funktionen getplayername kan kallas med variabeln playerName
-//använd playerName för att skriva ut namnet som man hämtade.
+// använd playerName för att skriva ut namnet som man hämtade.
 
-int main()
+void displayBlackjackRules()
 {
-
-    std::string playerName = getPlayerName();
-}
-
-void displayBlackjackRules(){
-
 
     std::cout << "Welcome to Blackjack!\n";
     std::cout << "Rules!\n";
@@ -37,12 +28,11 @@ void displayBlackjackRules(){
     std::cout << "6. If your hand exceeds 21, you bust and lose the round.\n";
     std::cout << "7. The dealer must hit until their total is atleast 17.\n";
     std::cout << "8. Whoever is closest to 21 without busting wins the round!\n";
-    std::cout << "This is not your usual blackjack game, there will be some twists when you least expect it Such as : LOREM IPSUM DOLER"
+    std::cout << "This is not your usual blackjack game, there will be some twists when you least expect it Such as : LOREM IPSUM DOLER";
     std::cout << "Good luck!\n";
 }
 
-
-void displayTwistRules() 
+void displayTwistRules()
 {
     std::cout << "1. Free Hit Twist:\n";
     std::cout << "   - Drawn cards that trigger this twist allow you to take a 'free hit' without the risk of busting.\n";
@@ -66,5 +56,3 @@ void displayTwistRules()
 
     std::cout << "Good luck! Keep an eye out for twist cards and use them strategically to gain an advantage.\n";
 }
-
-#endif
