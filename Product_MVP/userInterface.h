@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-void displayHandValue(const std::vector<Card> &hand, const std::string &playerName)
+void displayHandValue(const std::vector<cardInfo> &hand, const std::string &playerName)
 {
     int totalValue = calculateHandValue(hand);
 
