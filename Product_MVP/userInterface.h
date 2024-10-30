@@ -50,4 +50,17 @@ int calculateHandValue(const std::vector<Card> &hand)
 
     return totalValue;
 }
+
+void show_hand(const PlayerRef player)
+{
+    std::cout << player.name << "'s current hand:" << std::endl;
+    for (int i = 0; i < player.card_count; i++)
+    {
+        std::cout << player.hand[i].rank << " of " << player.hand[i].suit << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+
+
 #endif
