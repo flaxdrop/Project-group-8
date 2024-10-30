@@ -17,8 +17,10 @@ int main()
     displayTwistRules();
     cardInfo card;
     std::string playerName = getPlayerName();
-    std::vector<cardInfo>playerCards = {};
+    std::vector<cardInfo> playerCards = {};
     playerCards.push_back(card = DrawCard());
-    for 
-    
+    for (cardInfo card : playerCards)
+    {
+        std::cout << card.cardValue << " " << card.cardInfomation;
+    }
 }
