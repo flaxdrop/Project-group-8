@@ -32,9 +32,12 @@ cardInfo DrawCard()
         cardInfo += "Ace";
         break;
     case 11:
-        cardInfo += "Queen";
+        cardInfo += "Knight";
         break;
     case 12:
+        cardInfo += "Queen";
+        break;
+    case 13:
         cardInfo += "King";
         break;
     default:
