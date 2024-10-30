@@ -4,14 +4,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "userInterface.h"
 
 cardInfo dealerTurn(std::vector<cardInfo> &dealerHand)
 {
     cardInfo card;
+    int value = 0;
     std::cout << "Dealer's turn:\n";
     while (true)
     {
-        if (calculateHandValue(dealerHand) >= 17)
+        value = calculateHandValue(dealerHand);
+        if (value >= 17)
         {
             break;
         }
@@ -22,5 +25,5 @@ cardInfo dealerTurn(std::vector<cardInfo> &dealerHand)
         Sleep(2000);
     }
 
-    std::cout << "Dealer has a total of " << calculateHandValue(dealerHand) << ".\n";
+    std::cout << "Dealer has a total of " << value << ".\n";
 }
