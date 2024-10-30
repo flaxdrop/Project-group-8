@@ -1,5 +1,4 @@
-//For handling dealer's actions and automated decision-making.
-
+// For handling dealer's actions and automated decision-making.
 
 #include <windows.h>
 #include <iostream>
@@ -8,28 +7,20 @@
 
 void dealerTurn(std::vector<cardInfo> &dealerHand)
 {
+    cardInfo card;
     std::cout << "Dealer's turn:\n";
-
     while (true)
     {
-        int handValue = calculateHandValue(dealerHand);
-
-        if (handValue >= 17)
+        if (calculateHandValue(dealerHand) >= 17)
         {
             break;
         }
 
-        dealerHand.push_back(DrawCard());
-    
-        std::cout << "Dealer draws a card: " << dealerHand << " (Total: " << handValue << ")\n";
+        dealerHand.push_back(card = DrawCard());
+
+        std::cout << "Dealer draws a card: " << card.cardInfomation << " (Total: " << card.cardValue << ")\n";
         Sleep(2000);
     }
 
     std::cout << "Dealer has a total of " << calculateHandValue(dealerHand) << ".\n";
 }
-
-
-
-
-
-

@@ -1,8 +1,5 @@
 // For implementing player actions (hit, stand, bust).
 
-#ifndef GAMESETUP_H
-#define GAMESETUP_H
-
 #include <iostream>
 #include <vector>
 #include <cstdlib>
@@ -89,5 +86,3 @@ public:
         }
     }
 };
-
-#endif
