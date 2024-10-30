@@ -36,6 +36,7 @@ void displayBlackjackRules(){
     std::cout << "6. If your hand exceeds 21, you bust and lose the round.\n";
     std::cout << "7. The dealer must hit until their total is atleast 17.\n";
     std::cout << "8. Whoever is closest to 21 without busting wins the round!\n";
+    std::cout << "This is not your usual blackjack game, there will be some twists when you least expect it Such as : LOREM IPSUM DOLER"
     std::cout << "Good luck!\n";
 }
 
