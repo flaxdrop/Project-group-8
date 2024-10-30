@@ -1,7 +1,4 @@
-//For handling dealer's actions and automated decision-making.
-
-#ifndef GAMESETUP_H
-#define GAMESETUP_H
+// For handling dealer's actions and automated decision-making.
 
 #include <string>
 #include <vector>
@@ -28,9 +25,3 @@ void dealerTurn(std::vector<Card> &dealerHand, std::vector<Card> &deck, int &dec
 
     std::cout << "Dealer has a total of " << calculateHandValue(dealerHand) << ".\n";
 }
-
-
-
-
-
-#endif
