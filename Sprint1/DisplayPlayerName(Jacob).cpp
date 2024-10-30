@@ -3,6 +3,10 @@
 
 #define MAX_CARDS 10
 
+// Typedef for reference to Card and Player structs
+typedef struct Card &CardRef;
+typedef struct Player &PlayerRef;
+
 struct Card
 {
     std::string rank;
@@ -16,7 +20,7 @@ struct Player
     int card_count = 0;
 };
 
-void add_card(Player &player, const std::string &rank, const std::string &suit)
+void add_card(PlayerRef player, const std::string &rank, const std::string &suit)
 {
     if (player.card_count < MAX_CARDS)
     {
@@ -26,13 +30,13 @@ void add_card(Player &player, const std::string &rank, const std::string &suit)
     }
     else
     {
-        std::cout << "Handen är full!" << std::endl;
+        std::cout << "The hand is full!" << std::endl;
     }
 }
 
-void show_hand(const Player &player)
+void show_hand(const PlayerRef player)
 {
-    std::cout << player.name << "'s aktuella hand:" << std::endl;
+    std::cout << player.name << "'s current hand:" << std::endl;
     for (int i = 0; i < player.card_count; i++)
     {
         std::cout << player.hand[i].rank << " of " << player.hand[i].suit << std::endl;
@@ -43,11 +47,11 @@ void show_hand(const Player &player)
 int main()
 {
     Player player;
-    player.name = "Spelare 1";
-    add_card(player, "Ess", "Hjärter");
+    player.name = "Player 1";
+    add_card(player, "Ace", "Hearts");
     show_hand(player);
 
-    add_card(player, "10", "Klöver");
+    add_card(player, "10", "Clubs");
     show_hand(player);
 
     return 0;
