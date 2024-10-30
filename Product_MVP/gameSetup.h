@@ -15,5 +15,12 @@ std::getline(std::cin, name);
     return name;
 }
 
+// Denna funktion gör bara så att funktionen getplayername kan kallas med variabeln playerName
+//använd playerName för att skriva ut namnet som man hämtade.
+
+int main(){
+
+    std::string playerName = getPlayerName();
+}
 
 #endif
